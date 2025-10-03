@@ -16,7 +16,6 @@ void ShowVIPBenefits()
 
 while (true)
 {
-    string? input = null;
     bool valid = false;
     do
     {
@@ -25,25 +24,19 @@ while (true)
         Console.WriteLine("2. Premium");
         Console.WriteLine("3. VIP");
         Console.Write("Nhập số hạng vé (1, 2, 3): ");
-        input = Console.ReadLine();
-
-        if (string.IsNullOrWhiteSpace(input))
+        var keyInfo = Console.ReadKey();
+        Console.WriteLine();
+        switch (keyInfo.KeyChar)
         {
-            Console.WriteLine("Vui lòng nhập số hạng vé.");
-            continue;
-        }
-
-        switch (input.Trim())
-        {
-            case "1":
+            case '1':
                 ShowStandardBenefits();
                 valid = true;
                 break;
-            case "2":
+            case '2':
                 ShowPremiumBenefits();
                 valid = true;
                 break;
-            case "3":
+            case '3':
                 ShowVIPBenefits();
                 valid = true;
                 break;
@@ -54,8 +47,9 @@ while (true)
     } while (!valid);
 
     Console.Write("Bạn có muốn chọn vé khác không? (y/n): ");
-    string? again = Console.ReadLine();
-    if (again == null || again.Trim().ToLower() != "y")
+    var againKey = Console.ReadKey();
+    Console.WriteLine();
+    if (char.ToLower(againKey.KeyChar) != 'y')
     {
         break;
     }
