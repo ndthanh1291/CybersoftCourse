@@ -1,4 +1,4 @@
-﻿using System;
+﻿Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 Console.Write("Nhập cân nặng (kg): ");
 double weight = Convert.ToDouble(Console.ReadLine());

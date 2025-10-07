@@ -1,5 +1,5 @@
 # Cybersoft .NET Course 
-This repository contains exercises for the Cybersoft .NET course, focusing on conditional statements in C#. Each exercise is organized by day in its own folder and project.
+This repository contains exercises for the Cybersoft .NET course. Each exercise is organized by day in its own folder and project.
 
 ## How to Run
 Run any exercise project individually.
