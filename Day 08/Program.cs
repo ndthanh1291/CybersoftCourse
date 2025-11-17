@@ -2,6 +2,9 @@
 using System.Runtime.Intrinsics.Arm;
 using System.Text.Json;
 
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+Console.InputEncoding = System.Text.Encoding.UTF8;
+
 //Ứng dụng collection
 /*
     Input: List<object> =
