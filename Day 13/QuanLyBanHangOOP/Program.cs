@@ -105,7 +105,7 @@ class Program
 
     static void XoaSanPham()
     {
-        Console.Write("Nhập mã sản phẩm cần xóa: ");
+        Console.Write("Nhập mã sản phẩm cần xóa:");
         string ma = Console.ReadLine() ?? "";
         var sp = danhSachSanPham.Find(x => x.MaSanPham == ma);
         if (sp != null)
