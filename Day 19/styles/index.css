@@ -1,19 +1,4 @@
-/* * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
-} */
-
-
-/* body{
-    background: red;
-} */
-
-/* body {
-    --bs-success:yellow;
-} */
-
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
 body {
     font-family: 'Hind', sans-serif !important;
 }
@@ -181,7 +166,6 @@ a.active {
     animation: fadeUp 1s;
     opacity: 0;
     animation-fill-mode: both;
-    /*giữ lại trạng thái css đích của keyframe*/
 }
 
 .carousel-demo .carousel-caption h5 {
