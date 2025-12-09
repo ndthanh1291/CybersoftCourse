@@ -1,6 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
-body {
-    font-family: 'Hind', sans-serif !important;
+
+body,
+html {
+    font-family: Hind, sans-serif;
+    color: #212529;
+    line-height: 1.5;
+    background-color: #fff
+}
+
+.heading {
+    max-width: 750px
+}
+
+.heading h2 {
+    font-size: 36px;
+    line-height: 42px;
+    color: #1a1d2d;
+    font-weight: 600
+}
+
+.heading p {
+    color: #585858;
+    line-height: 24px
 }
 
 a.active {
@@ -110,18 +131,71 @@ a.active {
 
 
 .available {
-    background: url(/resource/3.jpg);
+    background: url(/resource/3.jpg) no-repeat center;
     background-size: cover;
-    background-position: center;
-    min-height: 800px;
+    background-attachment: fixed;
+    position: relative
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.5);
-    min-height: 800px;
-    /* backdrop-filter: blur(5px); */
+    background: rgba(39, 43, 54, .5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
 }
 
+.feature {
+    background: url(../resource/3.jpg) no-repeat center;
+    background-size: cover;
+    padding: 100px 0 120px;
+    background-attachment: fixed;
+    position: relative
+}
+
+.feature .overlay {
+    background: rgba(7, 10, 12, .72)
+}
+
+.feature .heading {
+    position: relative
+}
+
+.feature__item {
+    padding: 40px 40px;
+    transition: .3s;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(3px);
+    transition: all .5s
+}
+
+.feature__item i {
+    font-size: 48px;
+    color: #35a22c
+}
+
+.feature__item h4 {
+    font-size: 20px;
+    color: #fff;
+    line-height: 30px;
+    padding-top: 25px;
+    font-weight: 800
+}
+
+.feature__item p {
+    padding-top: 15px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff
+}
+
+.feature__item:hover {
+    background: #000;
+    border-color: #fff
+}
 
 
 .available .card {
@@ -137,29 +211,88 @@ a.active {
     background: #000;
 }
 
-.achievement {
-    background: url(/resource/memphis_3.png), url(/resource/memphis_2.png);
-    background-position: bottom left, top right;
-    background-size: 500px auto, 500px auto;
-    background-repeat: no-repeat, no-repeat;
-    padding: 50px 0px;
-
+.award {
+    position: relative;
+    color: #585858;
+    padding: 70px 0
 }
 
-.achievement .card {
-    background-color: rgba(182, 182, 182, 0.1) !important;
-    backdrop-filter: blur(5px);
+.award__bg {
+    background-image: url(../resource/memphis_3.png);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
 }
 
-.footer .fab {
-    transition: all 0.5s;
+.award__left {
+    background: rgba(255, 255, 255, .25);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .3);
+    padding: 45px;
+    margin-left: 120px
 }
 
-.footer .fab:hover {
-    border: 1px solid green !important;
-    color: green;
-    cursor: pointer;
-    transition: all 0.5s;
+.award__right {
+    padding: 45px 0
+}
+
+@media screen and (max-width:575.98px) {
+    .award__bg {
+        background-size: cover
+    }
+}
+
+footer {
+    background: #222
+}
+
+footer a {
+    color: #aaa
+}
+
+footer p {
+    color: #aaa;
+    margin: 0
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #35a22c
+}
+
+.footer__main i {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 50%;
+    border: 1px solid #454545;
+    transition: all .5s
+}
+
+.footer__main a {
+    margin-right: 10px
+}
+
+.footer__main a:last-child {
+    margin-right: 0
+}
+
+.footer__copies {
+    border-top: 1px solid #454545;
+    padding-top: 30px;
+    margin-top: 30px
+}
+
+.footer__main i:hover {
+    border-color: #35a22c
 }
 
 .carousel-demo .carousel-caption .img-profile {
