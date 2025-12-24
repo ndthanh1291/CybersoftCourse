@@ -1,0 +1,23 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h2" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <RedirectToAbout />
+        </LayoutView>
+    </NotFound>
+</Router>
+
+@code {
+    // Redirect to /about if not found
+    public class RedirectToAbout : ComponentBase
+    {
+        [Inject] NavigationManager Navigation { get; set; } = default!;
+        protected override void OnInitialized()
+        {
+            Navigation.NavigateTo("/about");
+        }
+    }
+}

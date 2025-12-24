@@ -1,0 +1,80 @@
+@page "/about"
+@layout MainLayout
+
+<div class="about-header">
+    <div class="about-title">
+        <span class="about-name">THANH</span>
+        <span class="about-surname">NGUYEN</span>
+    </div>
+    <div class="about-contact">
+        Ho Chi Minh City, Vietnam | <a href="mailto:ndthanh1291@gmail.com">ndthanh1291@gmail.com</a> | +84 XX XXX XXXX
+    </div>
+    <div class="about-desc">
+        Accomplished .NET Team Leader with 10+ years of experience in architecting, developing, and delivering enterprise-grade applications. Proven expertise in leading cross-functional teams, driving agile processes, and mentoring developers. Passionate about building scalable solutions with C#, ASP.NET Core, Azure, and modern web technologies. Adept at collaborating with stakeholders to align technology with business goals.
+    </div>
+    <div class="about-social mt-4">
+        <a href="https://www.linkedin.com" class="about-social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com" class="about-social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://twitter.com" class="about-social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://facebook.com" class="about-social-icon" title="Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+    </div>
+</div>
+
+<style>
+    .about-header {
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+    .about-title {
+        font-size: 4rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+        line-height: 1;
+    }
+    .about-name {
+        color: #343a40;
+    }
+    .about-surname {
+        color: #cb6d3c;
+        margin-left: 0.5rem;
+    }
+    .about-contact {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+    .about-contact a {
+        color: #cb6d3c;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    .about-desc {
+        font-size: 1.2rem;
+        color: #6c757d;
+        max-width: 900px;
+        margin-bottom: 2rem;
+    }
+    .about-social {
+        display: flex;
+        gap: 1.2rem;
+    }
+    .about-social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #f3f3f3;
+        color: #343a40;
+        font-size: 2rem;
+        transition: background 0.2s, color 0.2s;
+        text-decoration: none;
+    }
+    .about-social-icon:hover {
+        background: #cb6d3c;
+        color: #fff;
+    }
+</style>

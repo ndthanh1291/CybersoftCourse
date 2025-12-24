@@ -1,0 +1,114 @@
+@page "/skills"
+@layout MainLayout
+
+<section class="resume-section">
+    <div class="resume-section-content">
+        <h2 class="mb-5 main-heading">Skills</h2>
+        
+        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+        <ul class="list-inline dev-icons">
+            <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+            <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+            <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
+            <li class="list-inline-item"><i class="fab fa-angular"></i></li>
+            <li class="list-inline-item"><i class="fab fa-react"></i></li>
+            <li class="list-inline-item"><i class="bi bi-node-js"></i></li>
+            <li class="list-inline-item"><i class="fab fa-sass"></i></li>
+            <li class="list-inline-item"><i class="fab fa-less"></i></li>
+            <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
+            <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
+            <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
+            <li class="list-inline-item"><i class="fab fa-npm"></i></li>
+        </ul>
+
+        <div class="subheading mb-3">Workflow</div>
+        <ul class="fa-ul mb-0 workflow-list">
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                Mobile-First, Responsive Design
+            </li>
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                Cross Browser Testing &amp; Debugging
+            </li>
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                Cross Functional Teams
+            </li>
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                Agile Development &amp; Scrum
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    /* Main Layout Spacing */
+    .resume-section {
+        padding: 5rem;
+        font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* Primary Heading: "SKILLS" */
+    .main-heading {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 3.5rem;
+        color: #343a40;
+        margin-bottom: 3rem !important;
+    }
+
+    /* Subheadings: "WORKFLOW", etc. */
+    .subheading {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 1.5rem;
+        color: #868e96; /* Medium Grey */
+        margin-bottom: 1rem !important;
+    }
+
+    /* Dev Icons styling */
+    .dev-icons {
+        font-size: 3rem;
+        margin-bottom: 3rem !important;
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .dev-icons .list-inline-item i, 
+    .dev-icons .list-inline-item svg {
+        color: #868e96; /* Matches the grey in your image */
+        transition: color 0.2s ease-in-out;
+    }
+
+    .dev-icons .list-inline-item i:hover {
+        color: #bd5d38; /* Optional: theme orange hover color */
+    }
+
+    /* Workflow List */
+    .workflow-list {
+        list-style: none;
+        padding-left: 2rem;
+        color: #868e96;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .workflow-list li {
+        position: relative;
+    }
+
+    .fa-li {
+        position: absolute;
+        left: -2rem;
+        color: #868e96;
+    }
+
+    .mb-5 { margin-bottom: 3rem !important; }
+    .mb-3 { margin-bottom: 1rem !important; }
+</style>
