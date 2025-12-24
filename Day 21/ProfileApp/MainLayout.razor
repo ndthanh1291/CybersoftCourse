@@ -6,6 +6,7 @@
     <base href="/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="app.css" />
+    
 </head>
 
 <!-- Bootstrap layout: Sidebar + Main content -->
@@ -16,12 +17,24 @@
             <img src="/img/avatar.jpg" class="mainlayout-avatar-img" alt="avatar" />
         </div>
         <ul class="mainlayout-sidebar-menu">
-            <li><NavLink href="/about" class="mainlayout-sidebar-link" Match="NavLinkMatch.All">ABOUT</NavLink></li>
-            <li><NavLink href="/experience" class="mainlayout-sidebar-link">EXPERIENCE</NavLink></li>
-            <li><NavLink href="/education" class="mainlayout-sidebar-link">EDUCATION</NavLink></li>
-            <li><NavLink href="/skills" class="mainlayout-sidebar-link">SKILLS</NavLink></li>
-            <li><NavLink href="/interests" class="mainlayout-sidebar-link">INTERESTS</NavLink></li>
-            <li><NavLink href="/award" class="mainlayout-sidebar-link">AWARDS</NavLink></li>
+            <li>
+                <NavLink href="/about" class="mainlayout-sidebar-link" Match="NavLinkMatch.All">ABOUT</NavLink>
+            </li>
+            <li>
+                <NavLink href="/experience" class="mainlayout-sidebar-link">EXPERIENCE</NavLink>
+            </li>
+            <li>
+                <NavLink href="/education" class="mainlayout-sidebar-link">EDUCATION</NavLink>
+            </li>
+            <li>
+                <NavLink href="/skills" class="mainlayout-sidebar-link">SKILLS</NavLink>
+            </li>
+            <li>
+                <NavLink href="/interests" class="mainlayout-sidebar-link">INTERESTS</NavLink>
+            </li>
+            <li>
+                <NavLink href="/award" class="mainlayout-sidebar-link">AWARDS</NavLink>
+            </li>
         </ul>
     </nav>
     <!-- Main Content -->
@@ -31,64 +44,72 @@
 </div>
 
 <style>
-/* Vertically center the layout */
-.mainlayout-root {
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-}
-.mainlayout-sidebar {
-    width: 320px;
-    background: #cb6d3c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    height: 100vh;
-}
-.mainlayout-avatar-wrapper {
-    margin-bottom: 32px;
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-}
-.mainlayout-avatar-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 6px solid #fff;
-    object-fit: cover;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
-.mainlayout-sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-}
-.mainlayout-sidebar-link {
-    display: block;
-    padding: 16px 0;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-}
-.mainlayout-sidebar-link.active, .mainlayout-sidebar-link:hover {
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-}
-.mainlayout-main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-}
+    /* Vertically center the layout */
+    .mainlayout-root {
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+    }
+
+    .mainlayout-sidebar {
+        width: 320px;
+        background: #cb6d3c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        height: 100vh;
+    }
+
+    .mainlayout-avatar-wrapper {
+        margin-bottom: 32px;
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mainlayout-avatar-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        object-fit: cover;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .mainlayout-sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mainlayout-sidebar-link {
+        display: block;
+        padding: 16px 0;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .mainlayout-sidebar-link.active,
+    .mainlayout-sidebar-link:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+    }
+
+    .mainlayout-main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+    }
 </style>

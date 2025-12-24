@@ -1,0 +1,53 @@
+.exp-section {
+    margin-top: 2.5rem;
+    margin-left: 2rem;
+    max-width: 900px;
+}
+
+.exp-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+    color: #343a40;
+}
+
+.exp-job {
+    margin-bottom: 2.5rem;
+}
+
+.exp-job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.exp-job-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #343a40;
+    text-transform: uppercase;
+}
+
+.exp-company {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+}
+
+.exp-date {
+    font-size: 1rem;
+    color: #cb6d3c;
+    font-weight: 500;
+    min-width: 180px;
+    text-align: right;
+}
+
+.exp-desc {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
