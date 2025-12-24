@@ -1,0 +1,35 @@
+@page "/car-color"
+
+<h2 style="font-weight:600;">Change color car</h2>
+<div style="display:flex;align-items:flex-start;gap:40px;">
+    <div>
+        <img src="@GetCarImage()" alt="Car" style="width:400px;border-radius:8px;box-shadow:0 2px 8px #0001;" />
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+        @* Fix: Changed single quotes to double quotes for the string arguments *@
+        <button @onclick='() => ChangeColor("red")'
+                style="background:@(selectedColor=="red" ? "#e53935" : "#fff");color:@(selectedColor=="red" ? "#fff" : "#e53935");font-weight:500;padding:10px 24px;border:none;border-radius:8px;font-size:16px;cursor:pointer;border:1px solid #e53935;">
+            Red color
+        </button>
+        
+        <button @onclick='() => ChangeColor("silver")'
+                style="background:@(selectedColor=="silver" ? "#bdbdbd" : "#fff");color:@(selectedColor=="silver" ? "#222" : "#888");font-weight:500;padding:10px 24px;border:none;border-radius:8px;font-size:16px;cursor:pointer;border:1px solid #bdbdbd;">
+            Silver color
+        </button>
+        
+        <button @onclick='() => ChangeColor("black")'
+                style="background:@(selectedColor=="black" ? "#111" : "#fff");color:@(selectedColor=="black" ? "#fff" : "#111");font-weight:500;padding:10px 24px;border:none;border-radius:8px;font-size:16px;cursor:pointer;border:1px solid #111;">
+            Black color
+        </button>
+    </div>
+</div>
+
+@code {
+    private string selectedColor = "black";
+    private string GetCarImage() => $"img/{selectedColor}-car.jpg";
+
+    private void ChangeColor(string color)
+    {
+        selectedColor = color;
+    }
+}
