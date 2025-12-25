@@ -2,18 +2,16 @@
 
 <PageTitle>Form Selector</PageTitle>
 
-<h2>Select a Form</h2>
+<h2 class="btn-group">Select a Form</h2>
 
 <div class="btn-group mb-4" role="group">
-    <button type="button" 
-            class="btn @(selectedForm == FormMode.Customer ? "btn-primary" : "btn-outline-primary")" 
-            @onclick="() => selectedForm = FormMode.Customer">
+    <button type="button" class="btn @(selectedForm == FormMode.Customer ? "btn-primary" : "btn-outline-primary")"
+        @onclick="() => selectedForm = FormMode.Customer">
         Customer Contact Form
     </button>
-    
-    <button type="button" 
-            class="btn @(selectedForm == FormMode.Course ? "btn-success" : "btn-outline-success")" 
-            @onclick="() => selectedForm = FormMode.Course">
+
+    <button type="button" class="btn @(selectedForm == FormMode.Course ? "btn-success" : "btn-outline-success")"
+        @onclick="() => selectedForm = FormMode.Course">
         Course Registration Form
     </button>
 </div>
@@ -32,6 +30,6 @@
 @code {
     // Using an Enum prevents bugs caused by typos in strings
     private enum FormMode { Customer, Course }
-    
+
     private FormMode selectedForm = FormMode.Customer;
 }

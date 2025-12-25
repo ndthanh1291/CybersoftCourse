@@ -42,9 +42,11 @@
             <ValidationMessage For="() => customer.Service" class="validation-message" />
         </div>
         <div class="form-group" style="margin-bottom: 10px;">
-            <InputCheckbox @bind-Value="customer.Agree" />
-            <label> I agree to the terms and conditions *</label>
-            <ValidationMessage For="() => customer.Agree" class="validation-message" />
+            <span style="display: flex; align-items: center;">
+                <InputCheckbox @bind-Value="customer.Agree" style="margin-right: 6px;" />
+                <label style="margin-bottom: 0;"> I agree to the terms and conditions *</label>
+                <ValidationMessage For="() => customer.Agree" class="validation-message" />
+            </span>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </EditForm>

@@ -1,11 +1,11 @@
 /* Custom form styles for both forms */
 .form-card {
     max-width: 500px;
-    margin: 40px auto;
+    margin: 30px auto;
     background: #fff;
     border-radius: 18px;
     box-shadow: 0 2px 16px 0 rgba(60, 72, 88, .15);
-    padding: 32px 32px 24px 32px;
+    padding: 12px 32px 24px 32px;
 }
 
 .form-card h2 {
@@ -49,7 +49,7 @@ input[type="checkbox"] {
 
 button.btn-primary,
 button.btn-success {
-    width: 30%;
+    width: 45%;
     font-size: 1.1rem;
     padding: 10px 0;
     border-radius: 6px;
@@ -58,7 +58,7 @@ button.btn-success {
 
 button.btn-outline-primary,
 button.btn-outline-success {
-    width: 30%;
+    width: 45%;
     font-size: 1.1rem;
     padding: 10px 0;
     border-radius: 6px;
@@ -78,4 +78,11 @@ button.btn-success {
 button.btn-primary:hover,
 button.btn-success:hover {
     opacity: 0.92;
+}
+
+.btn-group {
+    max-width: 560px;
+    margin: 0px auto;
+    border-radius: 18px;
+    padding: 0px 32px 0px 32px;
 }

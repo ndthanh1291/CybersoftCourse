@@ -52,8 +52,8 @@
             <span style="display: flex; align-items: center;">
                 <InputCheckbox @bind-Value="registration.Agree" style="margin-right: 6px;" />
                 <label style="margin-bottom: 0;"> I agree to the terms and conditions *</label>
+                <ValidationMessage For="() => registration.Agree" class="validation-message" />
             </span>
-            <ValidationMessage For="() => registration.Agree" class="validation-message" />
         </div>
         <button type="submit" class="btn btn-success">Register</button>
     </EditForm>
