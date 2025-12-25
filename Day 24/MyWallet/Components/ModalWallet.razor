@@ -1,0 +1,60 @@
+@using Microsoft.AspNetCore.Components
+@inject IJSRuntime JS
+
+<div class="modal fade @(Show ? "show d-block" : "")" tabindex="-1" style="background:rgba(0,0,0,0.5)">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Title</h5>
+                <button type="button" class="btn-close" @onclick="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label>Amount</label>
+                    <input type="number" class="form-control" @bind="Amount" min="1" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" @onclick="Close">Close</button>
+                <button class="btn btn-primary" @onclick="@(async () => await Submit())">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public bool Show { get; set; }
+    [Parameter] public EventCallback<bool> ShowChanged { get; set; }
+    [Parameter] public EventCallback<decimal> OnSubmit { get; set; }
+    [Parameter] public decimal TotalBalance { get; set; }
+
+    public decimal Amount { get; set; }
+    public string? Error { get; set; }
+
+    void Close()
+    {
+        ShowChanged.InvokeAsync(false);
+        Amount = 0;
+        Error = null;
+    }
+
+    async Task Submit()
+    {
+        if (Amount <= 0)
+        {
+            Error = "Amount must be positive!";
+            await JS.InvokeVoidAsync("alert", Error);
+            return;
+        }
+        if (Title == "Withdraw Money" && Amount > TotalBalance)
+        {
+            Error = "Amount exceeds total balance!";
+            await JS.InvokeVoidAsync("alert", Error);
+            return;
+        }
+        await OnSubmit.InvokeAsync(Amount);
+        Close();
+    }
+}
