@@ -1,0 +1,97 @@
+@* CustomerContactForm.razor *@
+@using Microsoft.AspNetCore.Components.Forms
+@using System.ComponentModel.DataAnnotations
+
+<div class="form-card">
+    <h2>Customer Contact Form</h2>
+    <EditForm Model="customer" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <div class="form-group">
+            <label>Full Name *</label>
+            <InputText class="form-control" @bind-Value="customer.FullName" />
+            <ValidationMessage For="() => customer.FullName" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Email *</label>
+            <InputText class="form-control" @bind-Value="customer.Email" />
+            <ValidationMessage For="() => customer.Email" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Phone Number *</label>
+            <InputText class="form-control" @bind-Value="customer.PhoneNumber" />
+            <ValidationMessage For="() => customer.PhoneNumber" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <InputText class="form-control" @bind-Value="customer.Address" />
+            <ValidationMessage For="() => customer.Address" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Message *</label>
+            <InputTextArea class="form-control" @bind-Value="customer.Message" />
+            <ValidationMessage For="() => customer.Message" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Select Service *</label>
+            <InputSelect class="form-control" @bind-Value="customer.Service">
+                <option value="">Choose...</option>
+                <option value="Consulting">Consulting</option>
+                <option value="Support">Support</option>
+                <option value="Other">Other</option>
+            </InputSelect>
+            <ValidationMessage For="() => customer.Service" class="validation-message" />
+        </div>
+        <div class="form-group" style="margin-bottom: 10px;">
+            <InputCheckbox @bind-Value="customer.Agree" />
+            <label> I agree to the terms and conditions *</label>
+            <ValidationMessage For="() => customer.Agree" class="validation-message" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </EditForm>
+</div>
+
+@code {
+    private CustomerContactModel customer = new();
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("Course registration submitted successfully.");
+    }
+
+    public class CustomerContactModel
+    {
+        [Required(ErrorMessage = "Full name is required.")]
+        [MinLength(3, ErrorMessage = "Full name must be at least 3 characters long.")]
+        public string FullName { get; set; }
+
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Phone number is required.")]
+        [RegularExpression(@"^\d{10,12}$", ErrorMessage = "Phone number must be 10-12 digits.")]
+        public string PhoneNumber { get; set; }
+
+        [MinLength(5, ErrorMessage = "Address must be at least 5 characters long.")]
+        public string Address { get; set; }
+
+        [Required(ErrorMessage = "Message is required.")]
+        [MinLength(10, ErrorMessage = "Message must be at least 10 characters long.")]
+        public string Message { get; set; }
+
+        [Required(ErrorMessage = "Please select a service.")]
+        [NotDefaultSelect(ErrorMessage = "Please select a service.")]
+        public string Service { get; set; }
+
+        [Range(typeof(bool), "true", "true", ErrorMessage = "You must agree before submitting.")]
+        public bool Agree { get; set; }
+    }
+
+    public class NotDefaultSelectAttribute : ValidationAttribute
+    {
+        public override bool IsValid(object value)
+        {
+            return value is string str && !string.IsNullOrWhiteSpace(str) && str != "" && str != "Choose...";
+        }
+    }
+}

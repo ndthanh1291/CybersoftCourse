@@ -1,0 +1,108 @@
+@* CourseRegistrationForm.razor *@
+@using Microsoft.AspNetCore.Components.Forms
+@using System.ComponentModel.DataAnnotations
+
+<div class="form-card">
+    <h2>Course Registration Form</h2>
+    <EditForm Model="registration" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <div class="form-group">
+            <label>Full Name *</label>
+            <InputText class="form-control" @bind-Value="registration.FullName" />
+            <ValidationMessage For="() => registration.FullName" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Email *</label>
+            <InputText class="form-control" @bind-Value="registration.Email" />
+            <ValidationMessage For="() => registration.Email" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Phone Number *</label>
+            <InputText class="form-control" @bind-Value="registration.PhoneNumber" />
+            <ValidationMessage For="() => registration.PhoneNumber" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Select Course *</label>
+            <InputSelect class="form-control" @bind-Value="registration.Course" TValue="string">
+                <option value="">Choose...</option>
+                <option value="C#">C#</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+            </InputSelect>
+            <ValidationMessage For="() => registration.Course" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Study Mode *</label><br />
+            <InputRadioGroup @bind-Value="registration.StudyMode" TValue="string">
+                <InputRadio Value=1 /> Online
+                <InputRadio Value=2 style="margin-left: 18px;" /> Offline
+            </InputRadioGroup>
+            <ValidationMessage For="() => registration.StudyMode" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Preferred Start Date *</label>
+            <InputDate class="form-control" @bind-Value="registration.StartDate" TValue="DateTime ?" />
+            <ValidationMessage For="() => registration.StartDate" class="validation-message" />
+        </div>
+        <div class="form-group">
+            <label>Comments or Notes</label>
+            <InputTextArea class="form-control" @bind-Value="registration.Comments" />
+        </div>
+        <div class="form-group" style="margin-bottom: 10px;">
+            <span style="display: flex; align-items: center;">
+                <InputCheckbox @bind-Value="registration.Agree" style="margin-right: 6px;" />
+                <label style="margin-bottom: 0;"> I agree to the terms and conditions *</label>
+            </span>
+            <ValidationMessage For="() => registration.Agree" class="validation-message" />
+        </div>
+        <button type="submit" class="btn btn-success">Register</button>
+    </EditForm>
+</div>
+
+@code {
+    private CourseRegistrationModel registration = new();
+
+    private async Task HandleValidSubmit()
+    {
+        Console.WriteLine("Course registration submitted successfully.");
+        await Task.CompletedTask;
+    }
+
+    public class CourseRegistrationModel
+    {
+        [Required(ErrorMessage = "Full name is required.")]
+        [MinLength(3, ErrorMessage = "Full name must be at least 3 characters long.")]
+        public string FullName { get; set; }
+
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Phone number is required.")]
+        [RegularExpression(@"^\d{10,12}$", ErrorMessage = "Phone number must be 10-12 digits.")]
+        public string PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Please select a course.")]
+        [NotDefaultSelect(ErrorMessage = "Please select a course.")]
+        public string Course { get; set; }
+
+        [Required(ErrorMessage = "Please select a study mode.")]
+        public string StudyMode { get; set; }
+
+        [Required(ErrorMessage = "Please select a start date.")]
+        public DateTime? StartDate { get; set; }
+
+        public string Comments { get; set; }
+
+        [Range(typeof(bool), "true", "true", ErrorMessage = "You must agree before submitting.")]
+        public bool Agree { get; set; }
+    }
+
+    public class NotDefaultSelectAttribute : ValidationAttribute
+    {
+        public override bool IsValid(object value)
+        {
+            return value is string str && !string.IsNullOrWhiteSpace(str) && str != "" && str != "Choose...";
+        }
+    }
+}
