@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  sa:
+    image: "mssql/server:2025-latest"
+    hostname: "sa"
+    restart: always
+    ports: 
+        - 1433:1433
+    environment:
+      - ACCEPT_EULA="Y"
+      - SA_PASSWORD=be4cf0db-8822-451c-8bc5-d3af5b48cdb9
